@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chacras</title>
+</head>
+
+<body>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .chakras {
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .chakras__woman {
+            max-width: 500px;
+            flex-basis: 100%;
+            position: relative;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        .chakras__chakra {
+            width: 3%;
+            height: 3%;
+            border-radius: 50%;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .chakras__chakra:hover {
+            width: 5%;
+            height: 5%;
+            transform: translate(-50%, -20%);
+            transition: .3s;
+            box-shadow: 5%;
+        }
+
+        .chakras__chakra--purple {
+            background-color: purple;
+            top: 24%;
+        }
+
+        .chakras__chakra--purple:hover {
+            -webkit-box-shadow: 0px 0px 59px 3px rgba(255, 0, 255, 1);
+            -moz-box-shadow: 0px 0px 59px 3px rgba(255, 0, 255, 1);
+            box-shadow: 0px 0px 20px 3px rgba(255, 0, 255, 1);
+
+        }
+
+        .chakras__chakra--indigo {
+            top: 29%;
+            background-color: rgb(38, 0, 255);
+        }
+
+        .chakras__chakra--indigo:hover {
+            -webkit-box-shadow: 0px 0px 59px 3px rgba(0, 98, 255, 0.35);
+            -moz-box-shadow: 0px 0px 59px 3px rgba(0, 98, 255, 0.35);
+            box-shadow: 0px 0px 20px 3px rgba(0, 200, 255, 1);
+
+        }
+
+        .chakras__chakra--blue {
+            top: 36%;
+            background-color: rgb(0, 234, 255);
+        }
+
+        .chakras__chakra--blue:hover {
+            -webkit-box-shadow: 0px 0px 59px 3px rgba(0, 98, 255, 0.35);
+            -moz-box-shadow: 0px 0px 59px 3px rgba(0, 98, 255, 0.35);
+            box-shadow: 0px 0px 20px 3px rgba(0, 255, 242, 1);
+
+        }
+
+        .chakras__chakra--green {
+            top: 42%;
+            background-color: rgb(0, 255, 47);
+        }
+
+        .chakras__chakra--green:hover {
+            -webkit-box-shadow: 0px 0px 59px 3px rgba(0, 98, 255, 0.35);
+            -moz-box-shadow: 0px 0px 59px 3px rgba(0, 98, 255, 0.35);
+            box-shadow: 0px 0px 20px 3px rgb(0, 255, 132);
+
+        }
+
+        .chakras__chakra--yellow {
+            top: 50%;
+            background-color: rgb(221, 255, 0);
+        }
+
+        .chakras__chakra--yellow:hover {
+            -webkit-box-shadow: 0px 0px 59px 3px rgba(0, 98, 255, 0.35);
+            -moz-box-shadow: 0px 0px 59px 3px rgba(0, 98, 255, 0.35);
+            box-shadow: 0px 0px 20px 3px rgb(255, 217, 0);
+
+        }
+
+        .chakras__chakra--orange {
+            top: 56%;
+            background-color: rgb(255, 140, 0);
+        }
+
+        .chakras__chakra--orange:hover {
+            -webkit-box-shadow: 0px 0px 59px 3px rgba(0, 98, 255, 0.35);
+            -moz-box-shadow: 0px 0px 59px 3px rgba(0, 98, 255, 0.35);
+            box-shadow: 0px 0px 20px 3px rgb(255, 208, 0);
+
+        }
+
+        .chakras__chakra--red {
+            top: 64%;
+            background-color: rgb(255, 0, 0);
+        }
+
+        .chakras__chakra--red:hover {
+            -webkit-box-shadow: 0px 0px 59px 3px rgba(0, 98, 255, 0.35);
+            -moz-box-shadow: 0px 0px 59px 3px rgba(0, 98, 255, 0.35);
+            box-shadow: 0px 0px 20px 3px rgb(255, 0, 0);
+
+        }
+    </style>
+
+    <section class="chakras">
+        <div class="chakras__woman">
+            <img src="img/woman.svg" alt="">
+            <div class="chakras__chakra chakras__chakra--purple"></div>
+            <div class="chakras__chakra chakras__chakra--indigo"></div>
+            <div class="chakras__chakra chakras__chakra--blue"></div>
+            <div class="chakras__chakra chakras__chakra--green"></div>
+            <div class="chakras__chakra chakras__chakra--yellow"></div>
+            <div class="chakras__chakra chakras__chakra--orange"></div>
+            <div class="chakras__chakra chakras__chakra--red"></div>
+        </div>
+    </section>
+
+    <script>
+        // capturo todos los chakras en una lista de nodos
+        const chakras = document.querySelectorAll('.chakras__chakra');
+
+        // recorro la lista con un forEach y en cada item aplico una función
+        chakras.forEach((element) => {
+            element.addEventListener('click', function () {
+                const chakraSound = new Audio('sound/chakra_sound.mp3');
+                chakraSound.play();
+            });
+        })
+    </script>
+
+</body>
+
+</html>
